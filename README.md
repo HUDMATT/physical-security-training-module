@@ -1,2 +1,3 @@
-# physical-security-training-module
-A physical security training module built for CSEC 41403
+# Don’t Hold the Door: Physical Social Engineering & Tailgating Awareness
+
+A quick, single page training module covering physical access security. Created for CSEC 441403
