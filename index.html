@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Don’t Hold the Door: Physical Social Engineering & Tailgating Awareness</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="./assets/css/styles.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#hero">Don’t Hold the Door <i class="bi bi-door-open"></i></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#objectives">Objectives</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#tailgating">Tailgating</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#why-fall">Human Vulnerabilities</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#techniques">Techniques</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#badging">Badging</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#know-them">"I Know Them"</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#scenarios">Scenarios</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#tips">Tips</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#quiz">Quiz</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#takeaway">Takeaway</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="progress-container">
+        <div class="progress-bar" id="progressBar"></div>
+    </div>
+
+    <section id="hero" class="hero-section bg-primary text-white text-center py-5">
+        <div class="container">
+            <h1 class="display-4">Don’t Hold the Door <i class="bi bi-door-open"></i></h1>
+            <p class="lead">How attackers use urgency, authority, and politeness to bypass access controls</p>
+            <p class="mb-4">Someone behind you says, "Hey, can you hold the door? I forgot my badge." If you open the
+                door, they may have just gotten through your entire access control system.</p>
+            <button class="btn btn-light btn-lg" onclick="scrollToSection('objectives')">Start Training</button>
+        </div>
+    </section>
+
+    <section id="objectives" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-4">Learning Objectives</h2>
+            <div class="row">
+                <div class="col-md-4 mb-3">
+                    <div class="card h-100">
+                        <div class="card-body text-center">
+                            <i class="bi bi-shield-check display-4 text-primary"></i>
+                            <h5 class="card-title">Define Concepts</h5>
+                            <p class="card-text">Understand tailgating and physical social engineering.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <div class="card h-100">
+                        <div class="card-body text-center">
+                            <i class="bi bi-eye display-4 text-primary"></i>
+                            <h5 class="card-title">Recognize Techniques</h5>
+                            <p class="card-text">Identify common methods attackers use.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <div class="card h-100">
+                        <div class="card-body text-center">
+                            <i class="bi bi-check-circle display-4 text-primary"></i>
+                            <h5 class="card-title">Apply Best Practices</h5>
+                            <p class="card-text">Make the safest and best decisions to keep the system secure.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="tailgating" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-4">What Is Tailgating?</h2>
+            <p class="lead text-center mb-4">Tailgating is when someone follows an authorized person through a locked
+                entryway without using their badge or PIN. Piggybacking is similar but often involves the authorized
+                person knowingly letting someone in.</p>
+            <div class="alert alert-info">
+                <strong>Key Point:</strong> Access control only works if every person badges in individually.
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <div class="card">
+                        <div class="card-body text-center">
+                            <div class="d-flex justify-content-around align-items-center">
+                                <div><i class="bi bi-person-badge display-4 text-success"></i><br>Badge Reader</div>
+                                <i class="bi bi-arrow-right display-4"></i>
+                                <div><i class="bi bi-person-check-fill display-4 text-primary"></i><br>Authorized User
+                                </div>
+                                <i class="bi bi-arrow-right display-4"></i>
+                                <div><i class="bi bi-door-open display-4 text-warning"></i><br>Door Opens</div>
+                                <i class="bi bi-arrow-right display-4"></i>
+                                <div><i class="bi bi-person-x-fill display-4 text-danger"></i><br>Unauthorized Person
+                                    Slips In</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="why-fall" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-4">Why People Fall For It</h2>
+            <p class="lead text-center mb-4">Being human inherently leaves us vulnerable. Attackers know this, and use
+                those vulnerabilities to their advantage. <br>Human behavior vulnerabilities that attackers exploit:</p>
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5><i class="bi bi-heart text-danger"></i> Politeness</h5>
+                            <p>People do not want to seem rude by not letting someone through.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5><i class="bi bi-person-circle text-info"></i> Assumption</h5>
+                            <p>"They look like they belong here."</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5><i class="bi bi-shield-exclamation text-warning"></i> Authority</h5>
+                            <p>"I'm from IT.", "I'm from management.", "I'm from facilities."</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5><i class="bi bi-clock text-danger"></i> Urgency</h5>
+                            <p>"I'm late for a meeting."</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5><i class="bi bi-people text-success"></i> Familiarity</h5>
+                            <p>"You've seen me around before."</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5><i class="bi bi-person-workspace text-primary"></i> Uniform Bias</h5>
+                            <p>Reflective vest, clipboard, tool bag, delivery box, or badge lanyard can make someone
+                                seem like they are supposed to be there.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="techniques" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-4">Common Physical Social Engineering Techniques</h2>
+            <div class="accordion" id="techniquesAccordion">
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#tailgatingTech">
+                            Tailgating
+                        </button>
+                    </h2>
+                    <div id="tailgatingTech" class="accordion-collapse collapse show"
+                        data-bs-parent="#techniquesAccordion">
+                        <div class="accordion-body">
+                            <strong>What it looks like:</strong> Someone follows you through a door.<br>
+                            <strong>Why it works:</strong> Politeness and assumption.<br>
+                            <strong>What to do:</strong> Politely ask them to badge in.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#contractor">
+                            Fake Contractor / Construction Worker
+                        </button>
+                    </h2>
+                    <div id="contractor" class="accordion-collapse collapse" data-bs-parent="#techniquesAccordion">
+                        <div class="accordion-body">
+                            <strong>What it looks like:</strong> Person in uniform with tools.<br>
+                            <strong>Why it works:</strong> Uniform bias and authority.<br>
+                            <strong>What to do:</strong> Verify their access through security or facilities.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#itSupport">
+                            Fake IT Support
+                        </button>
+                    </h2>
+                    <div id="itSupport" class="accordion-collapse collapse" data-bs-parent="#techniquesAccordion">
+                        <div class="accordion-body">
+                            <strong>What it looks like:</strong> Person claiming IT issue.<br>
+                            <strong>Why it works:</strong> Authority and urgency.<br>
+                            <strong>What to do:</strong> Do not grant access, report it to IT.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#delivery">
+                            Delivery Excuse
+                        </button>
+                    </h2>
+                    <div id="delivery" class="accordion-collapse collapse" data-bs-parent="#techniquesAccordion">
+                        <div class="accordion-body">
+                            <strong>What it looks like:</strong> Person with package needing access.<br>
+                            <strong>Why it works:</strong> Urgency and assumption.<br>
+                            <strong>What to do:</strong> Direct them to reception.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#badgeBorrow">
+                            Badge Borrowing
+                        </button>
+                    </h2>
+                    <div id="badgeBorrow" class="accordion-collapse collapse" data-bs-parent="#techniquesAccordion">
+                        <div class="accordion-body">
+                            <strong>What it looks like:</strong> Asking to borrow a badge.<br>
+                            <strong>Why it works:</strong> Politeness and familiarity.<br>
+                            <strong>What to do:</strong> Never lend your badge, no matter how much you know the person.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#shoulderSurf">
+                            Shoulder Surfing
+                        </button>
+                    </h2>
+                    <div id="shoulderSurf" class="accordion-collapse collapse" data-bs-parent="#techniquesAccordion">
+                        <div class="accordion-body">
+                            <strong>What it looks like:</strong> Watching someone enter PIN or badge.<br>
+                            <strong>Why it works:</strong> Opportunity.<br>
+                            <strong>What to do:</strong> Cover your inputs and report to security.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#dumpster">
+                            Dumpster Diving / Exposed Documents
+                        </button>
+                    </h2>
+                    <div id="dumpster" class="accordion-collapse collapse" data-bs-parent="#techniquesAccordion">
+                        <div class="accordion-body">
+                            <strong>What it looks like:</strong> Searching trash for info.<br>
+                            <strong>Why it works:</strong> Poor disposal practices.<br>
+                            <strong>What to do:</strong> Shred any sensitive documents.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#pretexting">
+                            Pretexting at Front Desk
+                        </button>
+                    </h2>
+                    <div id="pretexting" class="accordion-collapse collapse" data-bs-parent="#techniquesAccordion">
+                        <div class="accordion-body">
+                            <strong>What it looks like:</strong> Lying to receptionist.<br>
+                            <strong>Why it works:</strong> Social engineering.<br>
+                            <strong>What to do:</strong> Verify everything they tell you and are asking for.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="badging" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-4">Why Badging Matters</h2>
+            <div class="alert alert-warning">
+                <strong>Important:</strong> Every person must badge in every time. Even coworkers should badge in behind
+                you.
+            </div>
+            <p>A person who "looks familiar" may not be authorized today. They could be:</p>
+            <ul class="list-group mb-4">
+                <li class="list-group-item">A recently fired employee</li>
+                <li class="list-group-item">A contractor whose access expired</li>
+                <li class="list-group-item">An employee in the wrong area</li>
+                <li class="list-group-item">A visitor without escort</li>
+                <li class="list-group-item">An insider threat</li>
+                <li class="list-group-item">Someone using a stolen badge</li>
+            </ul>
+            <p>Badging creates an audit trail. If an incident happens, logs help investigators determine who entered and
+                when. Holding the door breaks all acountability.</p>
+        </div>
+    </section>
+
+    <section id="know-them" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-4">"But I Know Them"</h2>
+            <div class="alert alert-info">
+                <strong>Security is not about being rude. It is about being consistent.</strong>
+            </div>
+            <p>Tell them: "Sorry, everyone has to badge in, it's for our safety and security."</p>
+            <p>Offer to help them in another way: "I'll walk you to the front desk to get a new badge."</p>
+            <p><strong>Emphasize:</strong> In order to stay secure, everyone has to follow the rules, it's not personal.</p>
+        </div>
+    </section>
+
+    <section id="scenarios" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-4">Scenarios</h2>
+            <div id="scenarioContainer">
+            </div>
+            <div class="mt-4">
+                <p>Score: <span id="scenarioScore">0</span>/4</p>
+                <div class="progress">
+                    <div class="progress-bar" id="scenarioProgress" style="width: 0%"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="tips" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-4">Prevention Tips</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <ul class="list-group">
+                        <li class="list-group-item"><i class="bi bi-check-circle text-success"></i> Badge in every time.
+                        </li>
+                        <li class="list-group-item"><i class="bi bi-check-circle text-success"></i> Do not hold secured
+                            doors open.</li>
+                        <li class="list-group-item"><i class="bi bi-check-circle text-success"></i> Challenge politely.
+                        </li>
+                        <li class="list-group-item"><i class="bi bi-check-circle text-success"></i> Verify contractors
+                            and visitors.</li>
+                        <li class="list-group-item"><i class="bi bi-check-circle text-success"></i> Report suspicious
+                            behavior quickly.</li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <ul class="list-group">
+                        <li class="list-group-item"><i class="bi bi-check-circle text-success"></i> Keep badges visible
+                            but protected.</li>
+                        <li class="list-group-item"><i class="bi bi-check-circle text-success"></i> Do not lend badges.
+                        </li>
+                        <li class="list-group-item"><i class="bi bi-check-circle text-success"></i> Escort visitors.
+                        </li>
+                        <li class="list-group-item"><i class="bi bi-check-circle text-success"></i> Secure sensitive
+                            papers and devices.</li>
+                        <li class="list-group-item"><i class="bi bi-check-circle text-success"></i> Trust policy over
+                            social pressure.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="quiz" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-4">Mini Quiz</h2>
+            <div id="quizContainer">
+            </div>
+            <button id="submitQuiz" class="btn btn-primary mt-3" style="display: none;">Submit Quiz</button>
+            <div id="quizResult" class="mt-3" style="display: none;"></div>
+        </div>
+    </section>
+
+    <section id="takeaway" class="py-5 bg-primary text-white text-center">
+        <div class="container">
+            <h2 class="display-5 mb-4">Final Takeaway <i class="bi bi-check-circle"></i></h2>
+            <p class="lead">Physical security fails when people put politeness over procedure. The rule is simple:
+                every person badges in, every time.</p>
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./assets/js/script.js"></script>
+</body>
+
+</html>
